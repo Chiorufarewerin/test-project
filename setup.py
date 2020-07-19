@@ -3,7 +3,7 @@ from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 EXTENSIONS = cythonize(
     Extension(
         'test_project.test',
