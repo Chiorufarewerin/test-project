@@ -1,15 +1,23 @@
 from glob import glob
 from setuptools import setup, find_packages, Extension
-from Cython.Build import cythonize
+try:
+    from Cython.Build import cythonize
+    EXTENSIONS = cythonize(
+        Extension(
+            'test_project.test',
+            sources=glob('./test_project/*.pyx'),
+        ),
+    )
+except ImportError:
+    EXTENSIONS = [
+        Extension(
+            'test_project.test',
+            sources=glob('./test_project/*.c'),
+        ),
+    ]
 
 
-VERSION = '0.1.1'
-EXTENSIONS = cythonize(
-    Extension(
-        'test_project.test',
-        sources=glob('./test_project/*.pyx'),
-    ),
-)
+VERSION = '0.1.2'
 
 
 setup(

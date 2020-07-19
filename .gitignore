@@ -131,7 +131,6 @@ dmypy.json
 
 *.html
 *.xlsx
-/*.py
 !/setup.py
 test_project/*.c
 /*.txt
