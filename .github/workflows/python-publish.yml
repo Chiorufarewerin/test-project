@@ -27,7 +27,7 @@ jobs:
       with:
         python-versions: 'cp36-cp36m cp37-cp37m cp38-cp38m'
         build-requirements: 'cython'
-        system-packages: 'libzip-dev expat-dev'
+        system-packages: 'libzip expat'
     - name: Publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
